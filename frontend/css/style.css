@@ -1,0 +1,295 @@
+/* ======================================================
+   RESET & BASE
+====================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  background: linear-gradient(#ebebb8, #ebebb8, #f4fa9b);
+  color: #002600;
+  overflow-x: hidden;
+}
+
+/* ======================================================
+   TIPOGRAFIA
+====================================================== */
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  color: #646e14;
+  text-shadow: 0 2px 7px #646e14;
+}
+
+/* ======================================================
+   HEADER / NAV
+====================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 6vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.logo img {
+  height: 2.6rem;
+  filter: drop-shadow(-2px 4px 10px #646e14);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: #f4fa9b;
+  text-decoration: none;
+  position: relative;
+  opacity: 0.85;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #2a7e1e;
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+.hero {
+  position: relative;
+  height: 100vh;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 85%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  max-width: 420px;
+  color: #ebebb8;
+}
+
+.ph1 {
+  color: #f4fa9b;
+}
+
+/* Fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade 0.8s ease forwards;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================
+   INFO CARDS
+====================================================== */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 80px 8vw;
+  justify-items: center;
+}
+/*========== CARD INTERNO =============================*/
+.info_card {
+  width: 220px;
+  height: 320px;
+  background: #f4fa9b;
+  border: 1px solid #002600;
+  border-radius: 15px;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/*===== ANIMAÇÃO DO CARD ========= */
+.info_card::before,
+.info_card::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  background: #646e14;
+  transition: all 0.4s ease;
+}
+
+.info_card::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.info_card::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 15px;
+}
+
+.info_card:hover::before,
+.info_card:hover::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.info_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,38,0,0.35);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   IMÓVEIS
+====================================================== */
+.imovel {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 8vw;
+}
+
+.imovel img {
+  max-width: 520px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 6px 6px 15px rgba(0,38,0,0.4);
+}
+
+@media (max-width: 900px) {
+  .imovel {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ======================================================
+   CONTATO / FOOTER
+====================================================== */
+.contato {
+  padding: 80px 10vw;
+  text-align: center;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ======================================================
+   BOTÕES
+====================================================== */
+[id$="Btn"] {
+  padding: 12px 20px;
+  background: #646e14;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+[id$="Btn"]:hover {
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   LINHAS DE FUNDO
+====================================================== */
+.bg-lines {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-lines .line {
+  fill: none;
+  stroke: #646e14;
+  stroke-width: 6;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: draw 7s ease-in-out infinite alternate;
+}
+
+.bg-lines .thin {
+  stroke-width: 4;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

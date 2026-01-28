@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO BÁSICO -->
+  <title>Cris On | Imóveis</title>
+  <meta name="description" content="Imóveis selecionados para comprar ou alugar. Transforme seu sonho em realidade com a Cris On.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ======================================================
+       LINHAS DE FUNDO (SVG)
+       - aria-hidden evita leitura por leitores de tela
+       - preserveAspectRatio garante adaptação à tela
+  ======================================================= -->
+  <svg
+    class="bg-lines"
+    viewBox="0 0 1920 1080"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M100 150
+         C 300 400, 600 -100, 900 200
+         S 1400 600, 1800 350"
+      class="line"
+    />
+
+    <path
+      d="M-100 750
+         C 400 500, 800 1000, 1200 650
+         S 1700 300, 2100 800"
+      class="line thin"
+    />
+  </svg>
+
+  <!-- ======================================================
+       MODAL / POPUP
+       - Fora do fluxo do layout
+       - Controlado via JS
+  ======================================================= -->
+  <div class="modal" id="popup" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <span class="close" id="closePopup" aria-label="Fechar">&times;</span>
+
+      <h2 class="h2cad">Cadastro rápido</h2>
+
+      <form>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="text" id="telefone" placeholder="WhatsApp (DDD + número)" required>
+
+        <select id="tipoImovel">
+          <option value="Apartamento">Apartamento</option>
+          <option value="Casa">Casa</option>
+          <option value="Fazenda">Fazenda</option>
+          <option value="Outros">Outros</option>
+        </select>
+
+        <select id="negocio">
+          <option value="Comprar">Comprar</option>
+          <option value="Alugar">Alugar</option>
+        </select>
+
+        <input type="number" id="valor" placeholder="Valor previsto (R$)">
+
+        <button type="button" id="enviarWhatsapp">
+          Enviar para WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       HEADER / NAV
+  ======================================================= -->
+  <header class="header">
+    <div class="logo">
+    <img src="uploads/logo.png" class="Cris On">
+  </div>
+    <nav class="nav" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#imoveis">Imóveis</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- ======================================================
+       HERO / TOPO
+  ======================================================= -->
+  <main>
+    <section class="hero" id="inicio">
+      <img
+        src="uploads/Casa_Gemini.png"
+        alt="Casa moderna cercada por natureza"
+        loading="eager"
+      >
+
+      <div class="hero-text">
+        <h1>Aqui você torna seu sonho realidade</h1>
+        <p class="ph1">Busque novas experiências, novos ares.</p>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         IMÓVEIS
+    ======================================================= -->
+    <section class="imovel apartamento" id="imoveis">
+      <div class="texto">
+        <h2>Apartamentos</h2>
+        <p>Está procurando o imóvel ideal para morar ou investir com segurança?Nossa equipe está pronta para te atender de forma personalizada, entendendo suas necessidades e apresentando as melhores oportunidades disponíveis no momento.Ao conversar com um de nossos atendentes, você recebe informações claras sobre valores, localização, condições e disponibilidade, sem compromisso.Entre em contato agora e dê o próximo passo para transformar seu projeto em realidade.</p>
+        <button id="apartamentoBtn">Apartamentos</button>
+      </div>
+
+      <img
+        src="uploads/b.png"
+        alt="Apartamento moderno"
+        loading="lazy"
+      >
+    </section>
+
+    <section class="imovel casa">
+      <img
+        src="uploads/a.png"
+        alt="Casa espaçosa e moderna"
+        loading="lazy"
+      >
+
+      <div class="texto">
+        <h2>Casas</h2>
+        <p>Privacidade, liberdade e espaço ideal para quem busca mais conforto, tranquilidade e qualidade de vida, em um imóvel feito para viver momentos únicos e inesquecíveis.</p>
+        <button id="casaBtn">Casas</button>
+      </div>
+    </section>
+
+    <!--=========================================================
+    CARD INFOTMATIVO
+    ==============================================================-->
+    <div class="info_card">card 1</div>
+    <p class="info">content</p>
+    <div class="info_card">card 1</div>
+    <p class="info">content</p>
+    <div class="info_card">card 1</div>
+    <p class="info">content</p>
+    
+    <!-- ======================================================
+         CONTATO
+    ======================================================= -->
+    <section class="contato" id="contato">
+      <h2>Tire sua duvida</h2>
+      <button id="contatoBtn">Contato</button>
+    </section>
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+  <footer>
+    <p>© Cris On 2025</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
